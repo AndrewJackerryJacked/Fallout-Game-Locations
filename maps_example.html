@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+	color : black;
+	font-size: 30px;
+}
+</style>
+</head>
+<body>
+<h1>Location of Fallout Games</h1>
+<!-- this is where you can change the size of the map --!>
+<div id="googleMap" style="width:100%;height:800px;"></div>
+
+<script>
+
+
+function myMap() {
+
+
+var mapCenter = new google.maps.LatLng(41.8781,-87.6298);
+var mapProp= {
+    center:mapCenter,
+    zoom:4,
+};
+//
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+//Los Angeles
+var LA = new google.maps.LatLng(34.0522,-118.2437);
+//San Francisco
+var San = new google.maps.LatLng(37.773972,-122.431297);
+//Las Vegas
+var vegas = new google.maps.LatLng(36.114647, -115.172813);
+//Chicago
+var chicago = new google.maps.LatLng(41.881832, -87.623177);
+//Washington D.C.
+var DC = new google.maps.LatLng(38.9072,-77.0369);
+//Boston
+var boston = new google.maps.LatLng(42.361145,-71.057083);
+
+//Map Icons
+
+//Los Angeles
+var marker=new google.maps.Marker({
+  position:LA,
+  icon:"Fallout 1.png"
+  });
+  marker.setMap(map);
+//San Francisco
+var marker=new google.maps.Marker({
+  position:San,
+  icon:"Fallout 2.png"
+  });
+  marker.setMap(map);
+//New Vegas
+var marker=new google.maps.Marker({
+  position:vegas,
+  icon:"Fallout New Vegas.png"
+  });
+  marker.setMap(map);
+//Chicago
+var marker=new google.maps.Marker({
+  position:chicago,
+  icon:"Fallout Tactics.png"
+  });
+marker.setMap(map);
+//D.C.
+  var marker=new google.maps.Marker({
+  position:DC,
+  icon:"Fallout 3.png"
+  });
+marker.setMap(map);
+//Boston
+  var marker=new google.maps.Marker({
+  position:boston,
+  icon:"Fallout 4.png"
+  });
+  marker.setMap(map);
+
+//Map line
+var myTrip = [LA,San,vegas,chicago,DC,boston];
+var flightPath = new google.maps.Polygon({
+  path:myTrip,
+  strokeColor:"#0000FF",
+  strokeOpacity:0.8,
+  strokeWeight:2,
+  fillColor:"#0000FF",
+  fillOpacity:0.4
+});
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyCCc4rC7qx_XLlAYA23wmYaBBfPAIbyTOg&callback=myMap"></script>
+
+</body>
+</html>
