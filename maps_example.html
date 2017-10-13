@@ -6,13 +6,53 @@ h1 {
 	color : black;
 	font-size: 30px;
 }
+p {
+    font-size: 18px;
+}
 </style>
 </head>
 <body>
 <h1>Location of Fallout Games</h1>
 <!-- this is where you can change the size of the map --!>
-<div id="googleMap" style="width:100%;height:800px;"></div>
+<div id="googleMap" style="width:100%;height:600px;"></div>
 
+ <h1> LA Boneyard </h1>
+ <img src="LA Boneyard.png">
+<p>The Boneyard, also known as Angel's Boneyard after it became one of the states of the New California Republic is the overall title given to the collective of settlements built in the remains of Los Angeles
+  named for its devastated skyscrapers, reduced to their metal "skeleton", and for the skeletons of the dead that littered the city after the Great War.y 2189, the Boneyard became one of the states of the New California Republic and Adytum became known as New Adytum. 
+  Many, during this time, also began to refer to the Boneyard as the Angel's Boneyard. As one of the largest cities on NCR territories, it was a natural choice for many organizations to place their headquarters. Thus, by 2281, the Boneyard is host to the Republic's Reserve and the Follower's Boneyard Medical University among many others. 
+  As the NCR now has control over the Boneyard, it has become much more stable, with multiple, but nowhere near all, buildings rebuilt, redecorated and renovated. However, Razz suggests it is not the best place to grow up, indicating the NCR still has much work to do, likely revolving around super mutants, ghouls, raiding gangs and large amounts of radiation.</p>
+
+<h1>New California</h1>
+<img src="New California.png">
+<p>New California is a region of the wasteland that exists within a portion of post-War Southern California. It stretches from Shady Sands to the north to as far south as the Boneyard. In 2186, it becomes the center of the New California Republic, one of the largest known factions in the wasteland. Thanks to the influence of the Vault Dweller, Aradesh, leader of Shady Sands, chose to open further relations with the rest of New California. 
+The town expanded rapidly and later joined together with Junktown, the Hub, Boneyard, Dayglow, and recently formed Maxson  to form a higher government, the New California Republic. After the Chosen One settled a problem with the New Khans, the NCR continued to expand and influence the nearby regions of Northern California, Baja, and the Mojave Wasteland.</p>
+
+<h1> Mojave Wasteland</h1>
+<img src="Mojave Wasteland.png">
+<p>In the years since, the Mojave has largely been ignored by the developing post-apocalyptic civilizations: the New California Republic in the west, and Caesar's Legion to the east, thus allowing enemies of such civilizations (raiders, the Brotherhood of Steel, and super mutants, for example) to prosper there. 
+For years, Vegas sat at its heart, decayed by almost two centuries of neglect. But when NCR advance scouts reached Hoover Dam with the intent of expanding the NCR's borders, pre-War securitrons rolled out onto the old Las Vegas Strip and rallied the three tribes occupying the city, claiming to act on behalf of Mr. House, the man who had saved the city decades prior. 
+By the time NCR reached Vegas, the city was in full working order, and the NCR returned to Shady Sands with tales of an oasis of light in the middle of the desert. An arrangement was made whereby the NCR were given 95% of Hoover Dam's power output and
+ McCarran International Airport as a regional headquarters, and the Strip, (and secretly Mr. House) retained its sovereignty, as well as the remaining 5% of power.</p>
+
+<h1>Chicago</h1>
+<img src="Chicago.png">
+<p>Chicago was a city located in Illinois. It was nearly completely destroyed during the Great War and the few that survived the bombs now live mostly in small tribal villages near the former city. 
+Some time after the defeat of the Master in 2162, the Brotherhood of Steel constructed airships and dispatched some of its soldiers East, to track down and assess the extent of the remaining super mutant threat. 
+However, a great storm broke the main airship and flung it far from its course. The other airships were torn apart and lost.</p>
+
+<h1> Captial Wasteland</h1>
+<img src="Captial Wasteland.png">
+<p>A once verdant and populated area of the US, the Capital and its surrounding countryside received significant nuclear bombardment during the Great War. 
+As of 2277, the area is little more than a scorching, barren desert where life for its inhabitants is a constant struggle for survival. It stretches from Raven Rock in the northwest to Rivet City in the southeast, 
+with what's left of the Potomac River dividing it roughly in two. The most influential factions of the region include the East Coast Brotherhood of Steel, with their base camp located in the Citadel, built into and beneath the ruins of the Pentagon and the Enclave who, secluded in Raven Rock, are believed by many to be nothing more than a pre-recorded, pre-War tape stuck on a loop. 
+Factions also include the super mutants, emerging from Vault 87, who overrun most of the Downtown D.C. and Arlington areas, as well as much of the wasteland. There are slavers, operating from Paradise Falls, Brotherhood Outcasts of Fort Independence who left the B.O.S. to continue what they believe to be their mission, the Talon Company mercenaries, who are based at the ruins of Fort Bannister and various raider tribes, who have numerous small camps and nomadic tribes in the area, the largest being Evergreen Mills.</p>
+
+<h1>Commonwealth</h1>
+<img src="Commonwealth.png">
+<p>The Commonwealth (occasionally referred to as the Commonwealth Wasteland) was an administrative division of the New England pre-War American state of Massachusetts. 
+While traditionally called a commonwealth in itself, Massachusetts was also part of the New England Commonwealth of the United States in the alternate timeline of the Fallout universe. Following total nuclear annihilation, most of the Commonwealth was reduced to a "war-ravaged quagmire of violence and despair" like much of the rest of the former United States.
+The Commonwealth was the location of major pre-War cities such as Boston, and home to the mysterious post-War organization known only as the Institute.</p>
 <script>
 
 
@@ -22,7 +62,7 @@ function myMap() {
 var mapCenter = new google.maps.LatLng(41.8781,-87.6298);
 var mapProp= {
     center:mapCenter,
-    zoom:4,
+    zoom:5,
 };
 //
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
@@ -38,6 +78,7 @@ var chicago = new google.maps.LatLng(41.881832, -87.623177);
 var DC = new google.maps.LatLng(38.9072,-77.0369);
 //Boston
 var boston = new google.maps.LatLng(42.361145,-71.057083);
+
 
 //Map Icons
 
@@ -80,15 +121,14 @@ marker.setMap(map);
 
 //Map line
 var myTrip = [LA,San,vegas,chicago,DC,boston];
-var flightPath = new google.maps.Polygon({
+var flightPath = new google.maps.Polyline({
   path:myTrip,
   strokeColor:"#0000FF",
   strokeOpacity:0.8,
-  strokeWeight:2,
-  fillColor:"#0000FF",
-  fillOpacity:0.4
+  strokeWeight:2
 });
-}
+ flightPath.setMap(map);
+ }
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyCCc4rC7qx_XLlAYA23wmYaBBfPAIbyTOg&callback=myMap"></script>
